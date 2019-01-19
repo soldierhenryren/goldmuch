@@ -1,8 +1,6 @@
 # coding=utf-8
 import random
-import logging
 import mnist_loader
-
 import numpy as np
 
 # # 左侧补齐15位长
@@ -55,14 +53,6 @@ class neuralnetwork(object):
     # 标记。这个方法返回包含四个列表的团：（每轮）在修正数据上的代价，修正数据上的精准度，训练数据的代价，训练数据的精准度。所有的值被修正
     # 在每一个训练轮的结束。所有，例如，如果我们训练30轮，那么团的第一个元素就是一个30元素的包含每轮结束时修正数据的代价。注意如果相应的
     # 标记没有设置，列表为空）。
-    # def SGD(self,training_data, epochs, mini_batch_size, eta,
-    #         lmbda = 0.0,
-    #         evaluation_data=None,
-    #         monitor_evaluation_cost=False,
-    #         monitor_evaluation_accuracy=False,
-    #         monitor_training_cost=False,
-    #         monitor_training_accuracy=False):
-    #         ):
     def SGD(self, training_data, epochs, mini_batch_size, eta,
             test_data=None):
         # 如果有测试数据
